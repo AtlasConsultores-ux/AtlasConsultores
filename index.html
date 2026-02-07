@@ -32,9 +32,19 @@
     }
 
     header .logo img {
-  height: 42px;          /* Ajusta según tu logo */
-  width: auto;
+  height: 100px;         /* Aumentamos el alto significativamente */
+  width: auto;           /* Mantiene la proporción original */
   display: block;
+  transition: transform 0.3s ease; /* Efecto suave al pasar el mouse */
+}
+
+header .logo img:hover {
+  transform: scale(1.05); /* Pequeño aumento al interactuar */
+}
+
+/* Ajuste opcional para el header si el logo lo empuja mucho */
+header {
+  padding: 10px 60px;    /* Reducimos el padding vertical del header */
 }
 
 
