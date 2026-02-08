@@ -58,12 +58,15 @@
       width: auto;
     }
 
+    /* Estilos del Menú de Navegación */
     header nav {
       display: flex;
       gap: 30px;
+      align-items: center; /* Asegura alineación vertical */
     }
 
-    header nav a {
+    /* Enlaces normales del menú */
+    header nav > a {
       text-decoration: none;
       color: var(--text-dark);
       font-weight: 600;
@@ -74,11 +77,11 @@
       position: relative;
     }
 
-    header nav a:hover {
+    header nav > a:hover {
       color: var(--primary-blue);
     }
     
-    header nav a::after {
+    header nav > a::after {
       content: '';
       position: absolute;
       width: 0;
@@ -89,8 +92,70 @@
       transition: width 0.3s;
     }
     
-    header nav a:hover::after {
+    header nav > a:hover::after {
       width: 100%;
+    }
+
+    /* --- ESTILOS DEL MENÚ DESPLEGABLE (DROPDOWN) --- */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      height: 100%;
+    }
+
+    /* Botón que activa el menú (Se ve igual que los otros enlaces) */
+    .dropbtn {
+      background-color: transparent;
+      color: var(--text-dark);
+      font-family: 'Open Sans', sans-serif; /* Mismo font que el body o nav */
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: none;
+      cursor: pointer;
+      padding: 10px 0; /* Un poco de padding vertical para facilitar el hover */
+    }
+
+    /* Contenido del menú oculto */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      z-index: 1001;
+      top: 100%; /* Aparece justo debajo */
+      left: 0;
+      border-top: 3px solid var(--accent-gold);
+    }
+
+    /* Enlaces DENTRO del desplegable */
+    .dropdown-content a {
+      color: var(--text-dark);
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 13px;
+      text-align: left;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    /* Hover en los enlaces internos */
+    .dropdown-content a:hover {
+      background-color: #f4f7f6;
+      color: var(--primary-blue);
+    }
+
+    /* Mostrar menú al pasar el mouse */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Cambiar color del botón principal al desplegar */
+    .dropdown:hover .dropbtn {
+      color: var(--primary-blue);
     }
 
     /* --- HERO SECTION --- */
@@ -253,7 +318,6 @@
       gap: 30px;
     }
 
-    /* Hacemos que toda la tarjeta sea un enlace sutil para mejorar la navegación */
     .service-link {
         text-decoration: none;
         color: inherit;
@@ -265,7 +329,7 @@
       background: var(--white);
       border-left: 4px solid var(--primary-blue);
       box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-      height: 100%; /* Para que todas tengan la misma altura */
+      height: 100%;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -344,8 +408,18 @@
       header nav {
         margin-top: 15px;
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-start;
         flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      /* Ajustes para el menú desplegable en móvil */
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        border-top: none;
+        padding-left: 10px;
+        border-left: 2px solid var(--accent-gold);
       }
 
       .hero h1 {
@@ -365,9 +439,17 @@
     <div class="logo">
       <img src="Atlas Consultores Logo.png" alt="Atlas Consultores">
     </div>
+    
     <nav>
       <a href="#">Nosotros</a>
-      <a href="servicios.html">Servicios</a>
+      
+      <div class="dropdown">
+        <button class="dropbtn">Servicios ▾</button>
+        <div class="dropdown-content">
+          <a href="servicios.html">Consultoría Financiera</a>
+          <a href="#">Auditoría y Riesgos</a>
+        </div>
+      </div>
       <a href="#">Publicaciones</a>
       <a href="#">Talento</a>
       <a href="#">Contacto</a>
@@ -421,7 +503,7 @@
     <h2 class="section-title">Nuestras Prácticas</h2>
     <div class="services-grid">
       
-      <a href="servicios.html" class="service-link">
+      <a href="#" class="service-link">
           <div class="service-item">
             <h3>Consultoría Estratégica</h3>
             <p>Definición de rutas de crecimiento y optimización de modelos de negocio.</p>
@@ -435,14 +517,14 @@
           </div>
       </a>
 
-      <a href="servicios.html" class="service-link">
+      <a href="#" class="service-link">
           <div class="service-item">
             <h3>Auditoría y Riesgos</h3>
             <p>Aseguramiento de la información y gestión integral de riesgos empresariales.</p>
           </div>
       </a>
 
-      <a href="servicios.html" class="service-link">
+      <a href="#" class="service-link">
           <div class="service-item">
             <h3>Analítica Avanzada</h3>
             <p>Uso de datos para decisiones informadas y predicción de escenarios financieros.</p>
@@ -463,9 +545,9 @@
       <div class="footer-col">
         <h4>Servicios</h4>
         <ul>
-          <li><a href="servicios.html">Consultoría de Negocios</a></li>
-          <li><a href="servicios.html">Finanzas Corporativas</a></li>
-          <li><a href="servicios.html">Gestión de Patrimonios</a></li>
+          <li><a href="servicios.html">Consultoría Financiera</a></li>
+          <li><a href="#">Auditoría y Riesgos</a></li>
+          <li><a href="#">Gestión de Patrimonios</a></li>
         </ul>
       </div>
       <div class="footer-col">
