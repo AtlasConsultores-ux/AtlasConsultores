@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Asesoría Financiera Integral</title>
+    <style>
+        /* --- ESTILOS GENERALES --- */
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6; /* Fondo suave general */
+            color: #333;
+        }
+
+        .asesoria-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            min-height: 100vh;
+        }
+
+        /* --- ENCABEZADO --- */
+        .asesoria-header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 30px;
+        }
+
+        .asesoria-header h2 {
+            color: #003366; /* Azul Corporativo */
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .asesoria-intro {
+            font-size: 1.15rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* --- SECCIÓN DE ALCANCE (GRID) --- */
+        .alcance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+            background: #eef2f5;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .alcance-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: #003366;
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .check-icon {
+            color: #28a745; /* Verde éxito */
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* --- TABLAS DE PRECIOS --- */
+        .pricing-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 70px;
+        }
+
+        .pricing-card {
+            background: #fff;
+            border: 1px solid #e1e1e1;
+            border-radius: 12px;
+            width: 300px; /* Ancho fijo para alineación */
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #003366;
+        }
+
+        /* Destacado (Estándar) */
+        .pricing-card.destacado {
+            border: 2px solid #003366;
+            transform: scale(1.02); /* Ligeramente más grande */
+            z-index: 2;
+        }
+
+        .pricing-card.destacado:hover {
+            transform: scale(1.02) translateY(-8px);
+        }
+
+        .etiqueta-destacado {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #003366;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .plan-title {
+            font-size: 1.6rem;
+            color: #003366;
+            margin: 10px 0 5px 0;
+            text-align: center;
+        }
+
+        .plan-focus {
+            text-align: center;
+            font-style: italic;
+            color: #777;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            min-height: 45px; /* Altura mínima para alinear títulos */
+        }
+
+        .price-tag {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .price-tag span {
+            font-size: 0.85rem;
+            color: #888;
+            font-weight: 400;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px 0;
+            flex-grow: 1; /* Empuja el footer hacia abajo */
+        }
+
+        .features-list li {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 24px;
+            line-height: 1.4;
+        }
+
+        .features-list li::before {
+            content: "•";
+            color: #003366;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 5px;
+            top: -2px;
+        }
+
+        .plan-duration {
+            text-align: center;
+            background: #f0f4f8;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #003366;
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+
+        /* --- DETALLES E INFORMACIÓN FINAL --- */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .detail-box h3 {
+            color: #003366;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .detail-box ul {
+            padding-left: 20px;
+            color: #444;
+        }
+        
+        .detail-box ul li {
+            margin-bottom: 8px;
+        }
+
+        /* --- VALOR DIFERENCIAL --- */
+        .value-prop {
+            text-align: center;
+            background: linear-gradient(135deg, #003366 0%, #004080 100%);
+            color: white;
+            padding: 50px 30px;
+            border-radius: 12px;
+        }
+        
+        .value-prop h3 {
+            margin-top: 0;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .value-prop p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .pricing-card {
+                width: 100%; /* Ocupa todo el ancho en móviles */
+                max-width: 400px;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr; /* Una columna para detalles */
+            }
+
+            .asesoria-header h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="asesoria-container">
+    
+    <header class="asesoria-header">
+        <h2>Asesoría Financiera Integral para MYPES</h2>
+        <p class="asesoria-intro">
+            Mejora la rentabilidad, el control de costos y la toma de decisiones financieras de tu negocio con una asesoría práctica y orientada a resultados.
+        </p>
+    </header>
+
+    <section class="alcance-grid">
+        <div class="alcance-item"><span class="check-icon">✔</span> Diagnóstico financiero</div>
+        <div class="alcance-item"><span class="check-icon">✔</span> Análisis de estados financieros</div>
+        <div class="alcance-item"><span class="check-icon">✔</span> Estructura de costos y precios</div>
+        <div class="alcance-item"><span class="check-icon">✔</span> Gestión de flujo de caja</div>
+        <div class="alcance-item"><span class="check-icon">✔</span> Planeamiento financiero</div>
+        <div class="alcance-item"><span class="check-icon">✔</span> Recomendaciones estratégicas</div>
+    </section>
+
+    <section class="pricing-container">
+        
+        <article class="pricing-card">
+            <h3 class="plan-title">Básico</h3>
+            <p class="plan-focus">"Orden Financiero"<br>Para negocios que recién empiezan.</p>
+            <div class="price-tag">
+                S/ 900 – S/ 1,200
+                <span>Precio Referencial</span>
+            </div>
+            <ul class="features-list">
+                <li>Diagnóstico financiero general</li>
+                <li>Análisis simple de ingresos/gastos</li>
+                <li>Identificación costos fijos/variables</li>
+                <li>Cálculo del punto de equilibrio</li>
+                <li>Formatos simples de control</li>
+                <li>1 reunión de resultados</li>
+            </ul>
+            <div class="plan-duration">Duración: 2 semanas</div>
+        </article>
+
+        <article class="pricing-card destacado">
+            <div class="etiqueta-destacado">Más Popular</div>
+            <h3 class="plan-title">Estándar</h3>
+            <p class="plan-focus">"Control y Rentabilidad"<br>Para MYPES en operación.</p>
+            <div class="price-tag">
+                S/ 1,800 – S/ 2,500
+                <span>Precio Referencial</span>
+            </div>
+            <ul class="features-list">
+                <li><strong>Todo lo del plan Básico +</strong></li>
+                <li>Análisis vertical y horizontal</li>
+                <li>Indicadores (Liquidez, Rentabilidad)</li>
+                <li>Mejora estructura de costos</li>
+                <li>Flujo de caja proyectado</li>
+                <li>Proyección a corto plazo</li>
+                <li>2–3 reuniones de seguimiento</li>
+            </ul>
+            <div class="plan-duration">Duración: 4 semanas</div>
+        </article>
+
+        <article class="pricing-card">
+            <h3 class="plan-title">Premium</h3>
+            <p class="plan-focus">"Crecimiento y Decisión"<br>Para expansión o consolidación.</p>
+            <div class="price-tag">
+                S/ 3,500 – S/ 5,000
+                <span>Precio Referencial</span>
+            </div>
+            <ul class="features-list">
+                <li><strong>Todo lo del plan Estándar +</strong></li>
+                <li>Proyección mediano plazo</li>
+                <li>Análisis de escenarios</li>
+                <li>Evaluación de inversiones</li>
+                <li>Preparación para acceso a crédito</li>
+                <li>Capacitación al equipo</li>
+                <li>Acompañamiento continuo</li>
+            </ul>
+            <div class="plan-duration">Duración: 6 a 8 semanas</div>
+        </article>
+
+    </section>
+
+    <section class="details-grid">
+        <div class="detail-box">
+            <h3>Modalidad y Entregables</h3>
+            <ul>
+                <li>Reuniones virtuales o presenciales.</li>
+                <li>Uso de herramientas prácticas (Excel/Google Sheets).</li>
+                <li>Informe de diagnóstico y análisis financiero.</li>
+                <li>Formatos reutilizables y plan de recomendaciones.</li>
+            </ul>
+        </div>
+        <div class="detail-box">
+            <h3>Pagos y Confidencialidad</h3>
+            <ul>
+                <li><strong>Forma de pago:</strong> 50% al inicio / 50% contra entrega.</li>
+                <li>Facilidades flexibles para MYPES.</li>
+                <li>Estricta confidencialidad con tu información (NDA disponible).</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="value-prop">
+        <h3>¿Por qué elegirnos?</h3>
+        <p>Especialización en MYPES peruanas con soluciones prácticas, no teóricas. Hablamos en lenguaje sencillo para no financieros y te acompañamos realmente en la toma de decisiones.</p>
+    </section>
+
+</div>
+
+</body>
+</html>
