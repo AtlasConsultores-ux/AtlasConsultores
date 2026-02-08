@@ -10,17 +10,48 @@
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6; /* Fondo suave general */
+            background-color: #f4f7f6;
             color: #333;
         }
 
         .asesoria-container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 40px 20px;
             background-color: #ffffff;
             box-shadow: 0 0 20px rgba(0,0,0,0.05);
             min-height: 100vh;
+            position: relative; /* Para posicionar elementos absolutos si fuera necesario */
+        }
+
+        /* --- BOTÓN VOLVER --- */
+        .btn-back-container {
+            margin-bottom: 20px;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #003366;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 10px 20px;
+            border: 1px solid #003366;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            background-color: transparent;
+        }
+
+        .btn-back:hover {
+            background-color: #003366;
+            color: white;
+        }
+
+        .btn-back span {
+            margin-right: 8px;
+            font-size: 1.2rem;
+            line-height: 0.8;
         }
 
         /* --- ENCABEZADO --- */
@@ -32,7 +63,7 @@
         }
 
         .asesoria-header h2 {
-            color: #003366; /* Azul Corporativo */
+            color: #003366;
             font-size: 2.5rem;
             margin-bottom: 10px;
             margin-top: 0;
@@ -70,12 +101,12 @@
         }
 
         .check-icon {
-            color: #28a745; /* Verde éxito */
+            color: #28a745;
             font-weight: bold;
             font-size: 1.2rem;
         }
 
-        /* --- TABLAS DE PRECIOS --- */
+        /* --- TABLAS DE SERVICIOS (SIN PRECIOS) --- */
         .pricing-container {
             display: flex;
             flex-wrap: wrap;
@@ -88,7 +119,7 @@
             background: #fff;
             border: 1px solid #e1e1e1;
             border-radius: 12px;
-            width: 300px; /* Ancho fijo para alineación */
+            width: 300px;
             padding: 30px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -106,7 +137,7 @@
         /* Destacado (Estándar) */
         .pricing-card.destacado {
             border: 2px solid #003366;
-            transform: scale(1.02); /* Ligeramente más grande */
+            transform: scale(1.02);
             z-index: 2;
         }
 
@@ -143,32 +174,18 @@
             color: #777;
             font-size: 0.95rem;
             margin-bottom: 25px;
-            min-height: 45px; /* Altura mínima para alinear títulos */
-        }
-
-        .price-tag {
-            text-align: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #222;
-            margin-bottom: 25px;
+            min-height: 45px;
             padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #eee; /* Línea separadora movida aquí */
         }
 
-        .price-tag span {
-            font-size: 0.85rem;
-            color: #888;
-            font-weight: 400;
-            display: block;
-            margin-top: 5px;
-        }
+        /* .price-tag ELIMINADO */
 
         .features-list {
             list-style: none;
             padding: 0;
             margin: 0 0 25px 0;
-            flex-grow: 1; /* Empuja el footer hacia abajo */
+            flex-grow: 1;
         }
 
         .features-list li {
@@ -197,6 +214,24 @@
             color: #003366;
             margin-top: auto;
             font-size: 0.9rem;
+        }
+        
+        /* Botón cotizar al final de la tarjeta */
+        .btn-cotizar {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            background-color: #003366;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        
+        .btn-cotizar:hover {
+            background-color: #004080;
         }
 
         /* --- DETALLES E INFORMACIÓN FINAL --- */
@@ -248,12 +283,12 @@
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             .pricing-card {
-                width: 100%; /* Ocupa todo el ancho en móviles */
+                width: 100%;
                 max-width: 400px;
             }
             
             .details-grid {
-                grid-template-columns: 1fr; /* Una columna para detalles */
+                grid-template-columns: 1fr;
             }
 
             .asesoria-header h2 {
@@ -266,6 +301,12 @@
 
 <div class="asesoria-container">
     
+    <div class="btn-back-container">
+        <a href="index.html" class="btn-back">
+            <span>&#8592;</span> Volver al Inicio
+        </a>
+    </div>
+
     <header class="asesoria-header">
         <h2>Asesoría Financiera Integral para MYPES</h2>
         <p class="asesoria-intro">
@@ -287,10 +328,7 @@
         <article class="pricing-card">
             <h3 class="plan-title">Básico</h3>
             <p class="plan-focus">"Orden Financiero"<br>Para negocios que recién empiezan.</p>
-            <div class="price-tag">
-                S/ 900 – S/ 1,200
-                <span>Precio Referencial</span>
-            </div>
+            
             <ul class="features-list">
                 <li>Diagnóstico financiero general</li>
                 <li>Análisis simple de ingresos/gastos</li>
@@ -306,10 +344,7 @@
             <div class="etiqueta-destacado">Más Popular</div>
             <h3 class="plan-title">Estándar</h3>
             <p class="plan-focus">"Control y Rentabilidad"<br>Para MYPES en operación.</p>
-            <div class="price-tag">
-                S/ 1,800 – S/ 2,500
-                <span>Precio Referencial</span>
-            </div>
+            
             <ul class="features-list">
                 <li><strong>Todo lo del plan Básico +</strong></li>
                 <li>Análisis vertical y horizontal</li>
@@ -325,10 +360,7 @@
         <article class="pricing-card">
             <h3 class="plan-title">Premium</h3>
             <p class="plan-focus">"Crecimiento y Decisión"<br>Para expansión o consolidación.</p>
-            <div class="price-tag">
-                S/ 3,500 – S/ 5,000
-                <span>Precio Referencial</span>
-            </div>
+            
             <ul class="features-list">
                 <li><strong>Todo lo del plan Estándar +</strong></li>
                 <li>Proyección mediano plazo</li>
@@ -356,8 +388,8 @@
         <div class="detail-box">
             <h3>Pagos y Confidencialidad</h3>
             <ul>
-                <li><strong>Forma de pago:</strong> 50% al inicio / 50% contra entrega.</li>
-                <li>Facilidades flexibles para MYPES.</li>
+                <li><strong>Forma de pago:</strong> A convenir (flexibilidad para MYPES).</li>
+                <li>Facilidades flexibles para pagos fraccionados.</li>
                 <li>Estricta confidencialidad con tu información (NDA disponible).</li>
             </ul>
         </div>
