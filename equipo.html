@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- ESTILOS GENERALES (Igual que index.html) --- */
+        /* --- ESTILOS GENERALES --- */
         :root {
             --primary-blue: #0d2c4d;
             --accent-gold: #c5a059;
@@ -30,7 +30,7 @@
             color: var(--primary-blue);
         }
 
-        /* --- HEADER --- */
+        /* --- HEADER SIMPLIFICADO (Solo Logo) --- */
         header {
             position: fixed;
             top: 0;
@@ -39,7 +39,7 @@
             height: 90px;
             background: var(--white);
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Mantiene el logo a la izquierda */
             align-items: center;
             padding: 0 5%;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -51,36 +51,10 @@
             width: auto;
         }
 
-        /* Menú de Navegación */
-        header nav {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-
-        header nav a, .dropbtn {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: color 0.3s;
-            position: relative;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        header nav a:hover, .dropbtn:hover {
-            color: var(--primary-blue);
-        }
-
-        /* --- BOTÓN VOLVER --- */
+        /* --- BOTÓN VOLVER (ESTILO IDÉNTICO A SERVICIOS) --- */
         .btn-back-container {
             max-width: 1100px;
-            margin: 20px auto 0 auto;
+            margin: 30px auto 0 auto;
             padding: 0 20px;
         }
 
@@ -90,17 +64,23 @@
             text-decoration: none;
             color: var(--primary-blue);
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: transform 0.2s;
+            font-size: 0.95rem;
+            padding: 10px 20px;
+            border: 1px solid var(--primary-blue); /* Borde agregado */
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            background-color: transparent;
         }
 
         .btn-back span {
-            margin-right: 5px;
+            margin-right: 8px;
             font-size: 1.2rem;
+            line-height: 0.8;
         }
 
         .btn-back:hover {
-            transform: translateX(-5px);
+            background-color: var(--primary-blue);
+            color: var(--white);
         }
 
         /* --- SECCIÓN PRINCIPAL EQUIPO --- */
@@ -153,18 +133,18 @@
             width: 100%;
             height: 300px;
             overflow: hidden;
-            background-color: #e0e0e0; /* Color de fondo mientras carga */
+            background-color: #e0e0e0;
         }
 
         .member-photo {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Asegura que la foto llene el espacio sin deformarse */
+            object-fit: cover;
             transition: transform 0.5s ease;
         }
 
         .team-card:hover .member-photo {
-            transform: scale(1.05); /* Efecto zoom suave al pasar el mouse */
+            transform: scale(1.05);
         }
 
         /* Información del Consultor */
@@ -195,7 +175,6 @@
             margin-bottom: 20px;
         }
 
-        /* Redes Sociales (Opcional) */
         .social-links {
             display: flex;
             justify-content: center;
@@ -263,17 +242,12 @@
 
         @media (max-width: 768px) {
             header {
-                height: auto;
-                padding: 15px 5%;
-                flex-direction: column;
-                align-items: flex-start;
+                height: 70px;
+                padding: 0 5%;
+                justify-content: center;
             }
-            
-            header nav {
-                margin-top: 15px;
-                width: 100%;
-                justify-content: space-between;
-                flex-wrap: wrap;
+            header .logo img {
+                height: 60px;
             }
         }
     </style>
@@ -284,12 +258,7 @@
         <div class="logo">
             <img src="Atlas Consultores Logo.png" alt="Atlas Consultores">
         </div>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="equipo.html" style="color: var(--primary-blue);">Equipo</a> <a href="#">Contacto</a>
-        </nav>
-    </header>
+        </header>
 
     <div class="btn-back-container">
         <a href="index.html" class="btn-back">
@@ -311,10 +280,10 @@
                     <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80" alt="Foto Consultor" class="member-photo">
                 </div>
                 <div class="member-info">
-                    <h3 class="member-name">Nombre del Consultor</h3>
+                    <h3 class="member-name">Roberto Méndez</h3>
                     <span class="member-role">Socio Director</span>
                     <p class="member-bio">
-                        Especialista en finanzas corporativas y estrategia de negocios con más de 15 años de experiencia liderando transformaciones empresariales en diversos sectores.
+                        Especialista en finanzas corporativas y estrategia de negocios con más de 15 años de experiencia liderando transformaciones empresariales.
                     </p>
                     <div class="social-links">
                         <a href="#" class="social-link">LinkedIn</a>
@@ -327,10 +296,10 @@
                     <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" alt="Foto Consultor" class="member-photo">
                 </div>
                 <div class="member-info">
-                    <h3 class="member-name">Nombre del Consultor</h3>
+                    <h3 class="member-name">Carla Venegas</h3>
                     <span class="member-role">Gerente de Auditoría</span>
                     <p class="member-bio">
-                        Experta en gestión de riesgos y control interno. Ha dirigido proyectos de auditoría financiera para importantes grupos económicos de la región.
+                        Experta en gestión de riesgos y control interno. Ha dirigido proyectos de auditoría para importantes grupos económicos de la región.
                     </p>
                     <div class="social-links">
                         <a href="#" class="social-link">LinkedIn</a>
@@ -343,10 +312,10 @@
                     <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80" alt="Foto Consultor" class="member-photo">
                 </div>
                 <div class="member-info">
-                    <h3 class="member-name">Nombre del Consultor</h3>
+                    <h3 class="member-name">Javier Solís</h3>
                     <span class="member-role">Consultor Senior</span>
                     <p class="member-bio">
-                        Analista financiero con enfoque en modelamiento de datos y valoración de empresas. Certificado en NIIF y estándares internacionales de contabilidad.
+                        Analista financiero con enfoque en modelamiento de datos y valoración de empresas. Certificado en NIIF y estándares internacionales.
                     </p>
                     <div class="social-links">
                         <a href="#" class="social-link">LinkedIn</a>
