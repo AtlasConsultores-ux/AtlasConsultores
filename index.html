@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
@@ -19,7 +20,7 @@
     }
 
     html {
-      scroll-behavior: smooth;
+      scroll-behavior: smooth; /* Desplazamiento suave */
     }
 
     * {
@@ -422,10 +423,28 @@
       color: var(--white);
     }
 
+    /* Estilos Redes Sociales */
+    .social-icons {
+        margin-top: 20px;
+        display: flex;
+        gap: 15px;
+    }
+
+    .social-icons a {
+        color: white;
+        font-size: 1.5rem;
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    .social-icons a:hover {
+        color: var(--accent-gold);
+        transform: translateY(-3px);
+    }
+
     .copyright {
-      text-align: center;
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.5);
+        text-align: center;
+        font-size: 0.85rem;
+        color: rgba(255,255,255,0.5);
     }
 
     /* --- RESPONSIVE --- */
@@ -495,7 +514,7 @@
 
       <a href="noticias.html">Noticias</a>
       
-      <a href="#">Contacto</a>
+      <a href="#contacto-footer">Contacto</a>
     </nav>
   </header>
 
@@ -600,7 +619,7 @@
     </div>
   </section>
 
-  <footer>
+  <footer id="contacto-footer">
     <div class="footer-container">
       <div class="footer-col">
         <h4>Atlas Consultores</h4>
@@ -613,24 +632,30 @@
         <ul>
           <li><a href="servicios.html">Consultoría Financiera</a></li>
           <li><a href="#">Auditoría y Riesgos</a></li>
-          <li><a href="#">Gestión de Patrimonios</a></li>
-        </ul>
+          </ul>
       </div>
       <div class="footer-col">
         <h4>Conócenos</h4>
         <ul>
           <li><a href="#quienes-somos">Quiénes somos</a></li>
           <li><a href="equipo.html">Equipo profesional</a></li>
-          <li><a href="#">Trabaja con nosotros</a></li>
+          <li><a href="equipo.html">Trabaja con nosotros</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contacto</h4>
         <ul>
           <li>Lima, Perú</li>
-          <li>contacto@atlasconsultores.com</li>
-          <li>(+51) 1 234 5678</li>
+          <li>atlasconsultores@gmail.com</li>
+          <li>+51 961743825</li>
         </ul>
+        
+        <div class="social-icons">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
+        </div>
+
       </div>
     </div>
     <div class="copyright">
