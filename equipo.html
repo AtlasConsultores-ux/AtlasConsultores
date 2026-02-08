@@ -30,7 +30,7 @@
             color: var(--primary-blue);
         }
 
-        /* --- HEADER SIMPLIFICADO (Solo Logo) --- */
+        /* --- HEADER SIMPLIFICADO --- */
         header {
             position: fixed;
             top: 0;
@@ -39,7 +39,7 @@
             height: 90px;
             background: var(--white);
             display: flex;
-            justify-content: space-between; /* Mantiene el logo a la izquierda */
+            justify-content: space-between;
             align-items: center;
             padding: 0 5%;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -51,7 +51,7 @@
             width: auto;
         }
 
-        /* --- BOTÓN VOLVER (ESTILO IDÉNTICO A SERVICIOS) --- */
+        /* --- BOTÓN VOLVER --- */
         .btn-back-container {
             max-width: 1100px;
             margin: 30px auto 0 auto;
@@ -66,7 +66,7 @@
             font-weight: 600;
             font-size: 0.95rem;
             padding: 10px 20px;
-            border: 1px solid var(--primary-blue); /* Borde agregado */
+            border: 1px solid var(--primary-blue);
             border-radius: 4px;
             transition: all 0.3s ease;
             background-color: transparent;
@@ -87,7 +87,7 @@
         .team-container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 20px 80px 20px;
+            padding: 40px 20px 60px 20px;
         }
 
         .team-header {
@@ -192,9 +192,51 @@
             color: var(--primary-blue);
         }
 
+        /* --- NUEVA SECCIÓN: TRABAJA CON NOSOTROS --- */
+        .join-section {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+            margin-top: 40px;
+        }
+
+        .join-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .join-section h2 {
+            color: var(--accent-gold); /* Título dorado */
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .join-section p {
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            opacity: 0.9;
+        }
+
+        .btn-join {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--accent-gold);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            border-radius: 2px;
+            transition: background 0.3s;
+        }
+
+        .btn-join:hover {
+            background-color: #b08d4b;
+        }
+
         /* --- FOOTER --- */
         footer {
-            background-color: var(--primary-blue);
+            background-color: #081e36; /* Un tono un poco más oscuro que el primary blue para diferenciar */
             color: var(--white);
             padding: 60px 8%;
         }
@@ -258,7 +300,7 @@
         <div class="logo">
             <img src="Atlas Consultores Logo.png" alt="Atlas Consultores">
         </div>
-        </header>
+    </header>
 
     <div class="btn-back-container">
         <a href="index.html" class="btn-back">
@@ -325,6 +367,14 @@
 
         </div>
     </div>
+
+    <section class="join-section">
+        <div class="join-content">
+            <h2>Trabaja con nosotros</h2>
+            <p>Buscamos talento que comparta nuestra pasión por la excelencia. Si quieres formar parte de un equipo multidisciplinario y asumir grandes desafíos, nos encantaría conocerte.</p>
+            <a href="mailto:talento@atlasconsultores.com" class="btn-join">Enviar CV</a>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-container">
