@@ -21,7 +21,7 @@
             background-color: #ffffff;
             box-shadow: 0 0 20px rgba(0,0,0,0.05);
             min-height: 100vh;
-            position: relative; /* Para posicionar elementos absolutos si fuera necesario */
+            position: relative;
         }
 
         /* --- BOTÓN VOLVER --- */
@@ -106,7 +106,7 @@
             font-size: 1.2rem;
         }
 
-        /* --- TABLAS DE SERVICIOS (SIN PRECIOS) --- */
+        /* --- TABLAS DE SERVICIOS --- */
         .pricing-container {
             display: flex;
             flex-wrap: wrap;
@@ -176,10 +176,8 @@
             margin-bottom: 25px;
             min-height: 45px;
             padding-bottom: 20px;
-            border-bottom: 1px solid #eee; /* Línea separadora movida aquí */
+            border-bottom: 1px solid #eee;
         }
-
-        /* .price-tag ELIMINADO */
 
         .features-list {
             list-style: none;
@@ -203,35 +201,6 @@
             position: absolute;
             left: 5px;
             top: -2px;
-        }
-
-        .plan-duration {
-            text-align: center;
-            background: #f0f4f8;
-            padding: 12px;
-            border-radius: 6px;
-            font-weight: 600;
-            color: #003366;
-            margin-top: auto;
-            font-size: 0.9rem;
-        }
-        
-        /* Botón cotizar al final de la tarjeta */
-        .btn-cotizar {
-            display: block;
-            text-align: center;
-            margin-top: 15px;
-            background-color: #003366;
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-        }
-        
-        .btn-cotizar:hover {
-            background-color: #004080;
         }
 
         /* --- DETALLES E INFORMACIÓN FINAL --- */
@@ -337,7 +306,6 @@
                 <li>Formatos simples de control</li>
                 <li>1 reunión de resultados</li>
             </ul>
-            <div class="plan-duration">Duración: 2 semanas</div>
         </article>
 
         <article class="pricing-card destacado">
@@ -354,7 +322,6 @@
                 <li>Proyección a corto plazo</li>
                 <li>2–3 reuniones de seguimiento</li>
             </ul>
-            <div class="plan-duration">Duración: 4 semanas</div>
         </article>
 
         <article class="pricing-card">
@@ -370,7 +337,6 @@
                 <li>Capacitación al equipo</li>
                 <li>Acompañamiento continuo</li>
             </ul>
-            <div class="plan-duration">Duración: 6 a 8 semanas</div>
         </article>
 
     </section>
