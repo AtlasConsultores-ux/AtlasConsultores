@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestras Soluciones - Atlas Consultores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- ESTILOS GENERALES --- */
+        :root {
+            --primary-blue: #0d2c4d;
+            --accent-gold: #c5a059;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding-top: 90px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-blue);
+        }
+
+        /* --- HEADER SIMPLIFICADO --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90px;
+            background: var(--white);
+            display: flex;
+            justify-content: center; /* Logo centrado para esta landing intermedia */
+            align-items: center;
+            padding: 0 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        header .logo img {
+            height: 80px;
+            width: auto;
+        }
+
+        /* --- BOTÓN VOLVER --- */
+        .btn-back-container {
+            max-width: 1100px;
+            margin: 30px auto 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 10px 20px;
+            border: 1px solid var(--primary-blue);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            background-color: transparent;
+        }
+
+        .btn-back span {
+            margin-right: 8px;
+            font-size: 1.2rem;
+            line-height: 0.8;
+        }
+
+        .btn-back:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .midserv-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px 80px 20px;
+            text-align: center;
+        }
+
+        .midserv-header {
+            margin-bottom: 60px;
+        }
+
+        .midserv-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .midserv-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: var(--text-light);
+        }
+
+        /* --- GRID DE SELECCIÓN DE SERVICIOS --- */
+        .selection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        /* Tarjeta de Servicio */
+        .service-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 40px 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none; /* Quita subrayado del enlace general */
+            color: inherit;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-color: var(--accent-gold);
+        }
+
+        /* Icono del servicio */
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            transition: color 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            color: var(--accent-gold);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        .btn-arrow {
+            margin-top: auto;
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+        }
+
+        .btn-arrow i {
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover .btn-arrow i {
+            transform: translateX(5px);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            opacity: 0.7;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="Atlas Consultores Logo.png" alt="Atlas Consultores">
+        </div>
+    </header>
+
+    <div class="btn-back-container">
+        <a href="index.html" class="btn-back">
+            <span>&#8592;</span> Volver al Inicio
+        </a>
+    </div>
+
+    <div class="midserv-container">
+        
+        <div class="midserv-header">
+            <h1>Nuestras Áreas de Práctica</h1>
+            <p>Seleccione el área de su interés para conocer en detalle cómo podemos potenciar el valor de su organización.</p>
+        </div>
+
+        <div class="selection-grid">
+            
+            <a href="servicios.html" class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3>Consultoría Financiera</h3>
+                <p>Diagnóstico financiero, estructuración de costos, flujo de caja y estrategias para maximizar la rentabilidad de su negocio.</p>
+                <div class="btn-arrow">Ver planes <i class="fa-solid fa-arrow-right"></i></div>
+            </a>
+
+            <a href="#" class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                </div>
+                <h3>Auditoría y Riesgos</h3>
+                <p>Aseguramiento de la información financiera, evaluación de control interno y gestión integral de riesgos corporativos.</p>
+                <div class="btn-arrow">Más información <i class="fa-solid fa-arrow-right"></i></div>
+            </a>
+
+            <a href="#" class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-chess"></i>
+                </div>
+                <h3>Consultoría Estratégica</h3>
+                <p>Definición de rutas de crecimiento, optimización de modelos de negocio y planificación comercial a largo plazo.</p>
+                <div class="btn-arrow">Más información <i class="fa-solid fa-arrow-right"></i></div>
+            </a>
+
+            <a href="#" class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+                <h3>Analítica Avanzada</h3>
+                <p>Uso de datos para la toma de decisiones informadas, predicción de escenarios y Business Intelligence.</p>
+                <div class="btn-arrow">Más información <i class="fa-solid fa-arrow-right"></i></div>
+            </a>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Atlas Consultores. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
