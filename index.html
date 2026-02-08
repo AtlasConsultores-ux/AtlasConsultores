@@ -9,7 +9,7 @@
 
   <style>
     :root {
-      /* Colores Atlas (Inspirados en la sobriedad de Apoyo pero con tu identidad) */
+      /* Colores Atlas */
       --primary-blue: #0d2c4d;   /* Azul Acero Oscuro */
       --accent-gold: #c5a059;    /* Dorado/Cobre mate */
       --text-dark: #333333;
@@ -36,7 +36,7 @@
       font-family: 'Montserrat', sans-serif;
     }
 
-    /* --- HEADER (Estilo Barra Blanca Fija) --- */
+    /* --- HEADER --- */
     header {
       position: fixed;
       top: 0;
@@ -48,13 +48,13 @@
       justify-content: space-between;
       align-items: center;
       padding: 0 5%;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Sombra sutil elegante */
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       z-index: 1000;
       transition: all 0.3s ease;
     }
 
     header .logo img {
-      height: 80px; /* Tamaño controlado y elegante */
+      height: 80px;
       width: auto;
     }
 
@@ -78,7 +78,6 @@
       color: var(--primary-blue);
     }
     
-    /* Pequeña línea dorada al hacer hover */
     header nav a::after {
       content: '';
       position: absolute;
@@ -94,19 +93,18 @@
       width: 100%;
     }
 
-    /* --- HERO SECTION (Impacto Visual) --- */
+    /* --- HERO SECTION --- */
     .hero {
       position: relative;
-      height: 85vh; /* Ocupa gran parte de la pantalla */
-      background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80'); /* Edificio corporativo moderno */
+      height: 85vh;
+      background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80');
       background-size: cover;
       background-position: center;
       display: flex;
       align-items: center;
-      justify-content: flex-start; /* Alineado a la izquierda como Apoyo */
+      justify-content: flex-start;
     }
 
-    /* Superposición oscura para que el texto resalte */
     .hero::before {
       content: '';
       position: absolute;
@@ -146,7 +144,7 @@
       color: var(--white);
       text-decoration: none;
       font-weight: 600;
-      border-radius: 2px; /* Bordes rectos, serios */
+      border-radius: 2px;
       transition: background 0.3s;
     }
 
@@ -177,7 +175,7 @@
       background-color: var(--accent-gold);
     }
 
-    /* --- INSIGHTS / NOTICIAS (Estilo Card Grid) --- */
+    /* --- INSIGHTS / NOTICIAS --- */
     .insights-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -193,7 +191,7 @@
 
     .insight-card:hover {
       transform: translateY(-5px);
-      border-bottom: 3px solid var(--accent-gold); /* Detalle de color al hover */
+      border-bottom: 3px solid var(--accent-gold);
     }
 
     .insight-image {
@@ -244,7 +242,7 @@
       margin-left: 10px;
     }
 
-    /* --- SERVICIOS (Fondo Gris) --- */
+    /* --- SERVICIOS --- */
     .services-section {
       background-color: var(--bg-light);
     }
@@ -255,11 +253,25 @@
       gap: 30px;
     }
 
+    /* Hacemos que toda la tarjeta sea un enlace sutil para mejorar la navegación */
+    .service-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
     .service-item {
       padding: 30px;
       background: var(--white);
       border-left: 4px solid var(--primary-blue);
       box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+      height: 100%; /* Para que todas tengan la misma altura */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
 
     .service-item h3 {
@@ -267,8 +279,13 @@
       color: var(--primary-blue);
       margin-bottom: 10px;
     }
+    
+    .service-item p {
+        color: var(--text-light);
+        font-size: 0.95rem;
+    }
 
-    /* --- FOOTER (Estilo Oscuro) --- */
+    /* --- FOOTER --- */
     footer {
       background-color: var(--primary-blue);
       color: var(--white);
@@ -403,22 +420,35 @@
   <section class="services-section">
     <h2 class="section-title">Nuestras Prácticas</h2>
     <div class="services-grid">
-      <div class="service-item">
-        <h3>Consultoría Estratégica</h3>
-        <p>Definición de rutas de crecimiento y optimización de modelos de negocio.</p>
-      </div>
-      <div class="service-item">
-        <h3>Finanzas Corporativas</h3>
-        <p>Valorización de empresas, fusiones, adquisiciones y reestructuración.</p>
-      </div>
-      <div class="service-item">
-        <h3>Auditoría y Riesgos</h3>
-        <p>Aseguramiento de la información y gestión integral de riesgos.</p>
-      </div>
-      <div class="service-item">
-        <h3>Analítica Avanzada</h3>
-        <p>Uso de datos para decisiones informadas y predicción de escenarios.</p>
-      </div>
+      
+      <a href="servicios.html" class="service-link">
+          <div class="service-item">
+            <h3>Consultoría Estratégica</h3>
+            <p>Definición de rutas de crecimiento y optimización de modelos de negocio.</p>
+          </div>
+      </a>
+
+      <a href="servicios.html" class="service-link">
+          <div class="service-item">
+            <h3>Asesoría Financiera Integral</h3>
+            <p>Diagnóstico, control de costos, flujo de caja y estrategias de rentabilidad para MYPES.</p>
+          </div>
+      </a>
+
+      <a href="servicios.html" class="service-link">
+          <div class="service-item">
+            <h3>Auditoría y Riesgos</h3>
+            <p>Aseguramiento de la información y gestión integral de riesgos empresariales.</p>
+          </div>
+      </a>
+
+      <a href="servicios.html" class="service-link">
+          <div class="service-item">
+            <h3>Analítica Avanzada</h3>
+            <p>Uso de datos para decisiones informadas y predicción de escenarios financieros.</p>
+          </div>
+      </a>
+
     </div>
   </section>
 
