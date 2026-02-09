@@ -34,7 +34,7 @@
       color: var(--text-dark);
       background-color: var(--white);
       line-height: 1.6;
-      padding-top: 80px;
+      padding-top: 90px; /* Ajustado para el header fijo */
     }
 
     h1, h2, h3, h4, a.nav-link {
@@ -447,34 +447,58 @@
         color: rgba(255,255,255,0.5);
     }
 
-    /* --- RESPONSIVE --- */
+    /* --- RESPONSIVE (MÓVIL Y TABLET) --- */
     @media (max-width: 768px) {
+      /* Ajustes de Header */
       header {
         height: auto;
         padding: 15px 5%;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center; /* Centrado */
       }
       
       header nav {
         margin-top: 15px;
         width: 100%;
-        justify-content: flex-start;
+        justify-content: center; /* Centrar enlaces */
         flex-wrap: wrap;
         gap: 15px;
+      }
+      
+      /* Botones más fáciles de tocar */
+      header nav > a, .dropbtn {
+          padding: 8px 10px;
       }
 
       .dropdown-content {
         position: static;
         box-shadow: none;
         border-top: none;
-        padding-left: 10px;
-        border-left: 2px solid var(--accent-gold);
+        padding-left: 0;
+        text-align: center;
+        width: 100%;
+        border-left: none;
+        background-color: #f9f9f9; /* Fondo suave para diferenciar */
       }
       
-      .mv-grid {
-          grid-template-columns: 1fr;
+      .dropdown-content a {
+          text-align: center;
+      }
+
+      /* Layout de secciones a una sola columna */
+      .mv-grid, 
+      .insights-grid, 
+      .services-grid, 
+      .footer-container {
+          grid-template-columns: 1fr; /* Una columna */
           gap: 30px;
+      }
+
+      /* Hero ajustes */
+      .hero {
+          height: auto;
+          min-height: 60vh;
+          padding: 80px 0; /* Espacio arriba/abajo */
       }
 
       .hero h1 {
@@ -484,7 +508,28 @@
       .hero-content {
         padding-left: 5%;
         padding-right: 5%;
+        text-align: center;
+        margin: 0 auto;
       }
+      
+      section {
+        padding: 60px 5%;
+      }
+    }
+
+    /* Ajustes específicos para móviles pequeños */
+    @media (max-width: 480px) {
+        .hero h1 {
+            font-size: 2rem;
+        }
+        
+        .section-title {
+            font-size: 1.75rem;
+        }
+        
+        header .logo img {
+            height: 60px;
+        }
     }
   </style>
 </head>
@@ -550,35 +595,38 @@
   </section>
 
   <section>
-    <h2 class="section-title">Noticias</h2>
+    <h2 class="section-title">Noticias Recientes</h2>
     <div class="insights-grid">
+      <!-- NOTICIA 1 -->
       <article class="insight-card">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80" alt="Finanzas" class="insight-image">
+        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=500&q=80" alt="Finanzas y Elecciones" class="insight-image">
         <div style="padding: 0 10px 20px 10px;">
-          <span class="insight-meta">Economía</span>
-          <h3>Proyecciones Financieras 2026: ¿Qué esperar?</h3>
-          <p>Un análisis detallado sobre las tendencias de mercado que definirán el próximo ciclo económico en la región.</p>
-          <a href="noticias.html" class="read-more">Leer artículo</a>
+          <span class="insight-meta">Finanzas Personales</span>
+          <h3>Elecciones 2026: Estrategias para blindar el patrimonio</h3>
+          <p>Ante la posible volatilidad política, expertos recomiendan la dolarización estratégica y la diversificación internacional.</p>
+          <a href="https://gestion.pe/tu-dinero/finanzas-personales/elecciones-2026-como-blindar-el-patrimonio-ante-la-volatilidad-politica-noticia/?ref=gesr" target="_blank" class="read-more">Leer artículo</a>
         </div>
       </article>
       
+      <!-- NOTICIA 2 -->
       <article class="insight-card">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=500&q=80" alt="Estrategia" class="insight-image">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&w=500&q=80" alt="Jubilación y Finanzas" class="insight-image">
         <div style="padding: 0 10px 20px 10px;">
-          <span class="insight-meta">Gestión</span>
-          <h3>Liderazgo en tiempos de incertidumbre</h3>
-          <p>Claves para mantener la cohesión y el rendimiento de los equipos de alto desempeño ante cambios estructurales.</p>
-          <a href="noticias.html" class="read-more">Leer artículo</a>
+          <span class="insight-meta">Pensiones</span>
+          <h3>AFP: Conozca las 4 modalidades de jubilación</h3>
+          <p>Más allá del retiro del 95.5%, existen alternativas como la Renta Vitalicia y el Retiro Programado.</p>
+          <a href="https://gestion.pe/tu-dinero/finanzas-personales/alternativas-al-retiro-de-955-de-afp-conozca-las-cuatro-modalidades-de-jubilacion-noticia/" target="_blank" class="read-more">Leer artículo</a>
         </div>
       </article>
 
+      <!-- NOTICIA 3 -->
       <article class="insight-card">
-        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=500&q=80" alt="Auditoría" class="insight-image">
+        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=500&q=80" alt="Legal y Tributario" class="insight-image">
         <div style="padding: 0 10px 20px 10px;">
-          <span class="insight-meta">Tecnología</span>
-          <h3>La transformación digital en la auditoría</h3>
-          <p>Cómo la inteligencia artificial está redefiniendo los estándares de transparencia y eficiencia corporativa.</p>
-          <a href="noticias.html" class="read-more">Leer artículo</a>
+          <span class="insight-meta">Tributario</span>
+          <h3>Fallo del TC limita accionar de la SUNAT</h3>
+          <p>El Tribunal Constitucional establece nuevos precedentes sobre la prescripción de deudas y la responsabilidad de la entidad recaudadora.</p>
+          <a href="https://gestion.pe/economia/tc-pone-freno-a-la-sunat-lo-que-dice-de-los-errores-de-la-entidad-recaudadora-y-la-prescripcion-noticia/?ref=gesr" target="_blank" class="read-more">Leer artículo</a>
         </div>
       </article>
     </div>
